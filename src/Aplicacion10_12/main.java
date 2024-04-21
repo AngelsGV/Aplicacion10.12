@@ -1,11 +1,20 @@
 package Aplicacion10_12;
 
-import static Aplicacion10_12.GuardarDatos.texto;
+import java.util.Scanner;
+
+import static Aplicacion10_12.Metodos.*;
 
 public class main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce tu nombre:");
+        String nombre = sc.nextLine();
 
-        texto();
+        System.out.println("Introduce tu edad:");
+        String edad = sc.nextLine();
+
+        guardarDatos(nombre,edad);
+        mostrarDatos();
 
     }
 }
