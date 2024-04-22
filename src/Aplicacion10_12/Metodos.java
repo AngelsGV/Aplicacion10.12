@@ -41,14 +41,14 @@ public static void guardarDatos(String nombre, int edad){
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
 
-        //}finally {
-          //  if (out != null){
-            //     try{
-              //      out.close();//hacemos que se vacíe el búfer y se escriba en el archivo
-               // }catch (IOException ex){
-                 //   System.out.println(ex);
-                //}
-            //}
+        }finally {
+            if (out != null){
+                 try{
+                  out.close();//hacemos que se vacíe el búfer y se escriba en el archivo
+                }catch (IOException ex){
+                    System.out.println(ex);
+                }
+            }
         }
 }
 }
