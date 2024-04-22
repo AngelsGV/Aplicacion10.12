@@ -1,6 +1,6 @@
 package Aplicacion10_12;
 
-import java.util.Scanner;
+import java.util.Scanner; //Entrada del teclado
 
 import static Aplicacion10_12.Metodos.*;
 
@@ -14,7 +14,7 @@ public class main {
         String edad = sc.nextLine();
 
         guardarDatos(nombre,edad);
-        mostrarDatos();
+       
 
     }
 }
