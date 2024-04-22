@@ -11,10 +11,9 @@ public class main {
         String nombre = sc.nextLine();
 
         System.out.println("Introduce tu edad:");
-        String edad = sc.nextLine();
+        int edad = sc.nextInt();
 
         guardarDatos(nombre,edad);
-       
 
     }
 }
