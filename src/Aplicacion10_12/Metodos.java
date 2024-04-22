@@ -33,7 +33,8 @@ public static void guardarDatos(String nombre, int edad){
     //No tiene que devolver nada.
         BufferedWriter out = null;
         try{
-            out = new BufferedWriter(new FileWriter("datos.txt"));
+            out = new BufferedWriter(new FileWriter("datos.txt",true));
+            //append true para que se guarde sin sobreescribirse en los datos anteriores.
             out.write(nombre + "," + edad); //escribimos en una unica sentencia
             out.newLine();//cambio de linea del archivo
             System.out.println("Datos guardados correctamente.");//Si llega hasta el final nos mostrará este mensaje
