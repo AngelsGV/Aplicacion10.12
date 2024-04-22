@@ -1,1 +1,3 @@
  Pepita,9
+Angels,24
+Lola,4
