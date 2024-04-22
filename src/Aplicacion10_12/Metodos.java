@@ -13,13 +13,13 @@ public class Metodos {
            texto = texto + linea + '\n'; //out.newLine(); // canvi de línea en el archiu
            linea = in.readLine();
        }
-   }catch(IOException ex){
+   }catch(Exception ex){
             System.out.println(ex.getMessage());
    } finally{
        if (in != null){
            try {
                in.close();//Buidem el búfer i se escriu el archiu
-           }catch (IOException ex){
+           }catch (Exception ex){
                System.out.println(ex);
            }
        }
@@ -27,15 +27,27 @@ public class Metodos {
        System.out.println(texto);
 }//Este fue el primer metodo que cree, me pensaba que también podría pedir los datos e introducirlos aquí. Pero no.
 public static void guardarDatos(String nombre, String edad){
-        try{File archivo = new File("datos.txt");
-            BufferedWriter writer = new BufferedWriter(new FileWriter(archivo, true));
-            writer.write(nombre + "," + edad);
-            writer.newLine();
-            writer.close();
-            System.out.println("Datos guardados correctamente.");
+        BufferedWriter out = null;
+        try{
+            out = new BufferedWriter(new FileWriter("datos.txt"));
+            out.write(nombre + "," + edad); //escribimos en una unica sentencia
+            out.newLine();//cambio de linea del archivo
+            System.out.println("Datos guardados correctamente.");//Si llega hasta el final nos mostrará este mensaje
         } catch (IOException ex) {
-            System.out.println("Error al guardar los datos: " + ex.getMessage());
+            System.out.println(ex.getMessage());
 
+        }finally {
+            if (out != null){
+                try{
+                    out.close();//hacemos que se vacíe el búfer y se escriba en el archivo
+                }catch (IOException ex){
+                    System.out.println(ex);
+                }
+            }
         }
 }
 }
+//Problemas
+// En consola no me guarda como toca -->
+//Datos guardados correctamente.
+//texto.txt (El sistema no puede encontrar el archivo especificado)
